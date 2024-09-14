@@ -67,7 +67,7 @@ if __name__ == '__main__':
     spNorm =SpecificNorm()
 
 
-    app = Face_detect_crop(name='antelope', root='./insightface_func/models')
+    app = Face_detect_crop(name='antelope', root='checkpoints/insightface_models')
     app.prepare(ctx_id= 0, det_thresh=0.6, det_size=(640,640),mode = mode)
 
     with torch.no_grad():

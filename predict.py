@@ -29,10 +29,10 @@ class Predictor(cog.Predictor):
                help="swap a single face (the one with highest confidence by face detection) or all faces in the target image")
     def predict(self, source, target, mode='all'):
 
-        app = Face_detect_crop_multi(name='antelope', root='./insightface_func/models')
+        app = Face_detect_crop_multi(name='antelope', root='checkpoints/insightface_models')
 
         if mode == 'single':
-            app = Face_detect_crop_single(name='antelope', root='./insightface_func/models')
+            app = Face_detect_crop_single(name='antelope', root='checkpoints/insightface_models')
 
         app.prepare(ctx_id=0, det_thresh=0.6, det_size=(640, 640))
 

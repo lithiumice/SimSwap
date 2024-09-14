@@ -25,7 +25,21 @@ python test_video_swapsingle.py --crop_size 224 --use_mask --name people --Arc_p
 ```
 - Swap all faces within the video.
 ```
+
+cd /home/hualin/code/DeepFace/SimSwap
+conda activate simswap2
+
+
+python test_video_swapmulti.py --crop_size 224 --use_mask --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path debug/target.jpg --video_path debug/rank5.mp4 --output_path ./output/s1/rank5_swap_224.mp4 --temp_path ./temp_results  --no_simswaplogo
+
+CUDA_VISIBLE_DEVICES=1 python test_video_swapmulti.py --crop_size 224 --use_mask --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path debug/target.jpg --video_path debug/rank5_seg1.mp4 --output_path ./output/s1/rank5_seg1_swap_224.mp4 --temp_path ./temp_results  --no_simswaplogo
+
+CUDA_VISIBLE_DEVICES=1 python test_video_swapmulti.py --crop_size 224 --use_mask --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path debug/target.jpg --video_path debug/rank5_seg1_part1.mp4 --output_path ./output/s1/rank5_seg1_part1_swap_224.mp4 --temp_path ./temp_results/s1  --no_simswaplogo
+
+
+
 python test_video_swapmulti.py --crop_size 224 --use_mask --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path ./demo_file/Iron_man.jpg --video_path ./demo_file/multi_people_1080p.mp4 --output_path ./output/multi_test_swapmulti.mp4 --temp_path ./temp_results 
+
 ```
 - Swap the ***specific*** face within the video.
 ```
@@ -61,6 +75,15 @@ python test_wholeimage_swapsingle.py --crop_size 224 --use_mask  --name people -
 - Swap all faces within one image. The result would be saved to ./output/result_whole_swapmulti.jpg
 ```
 python test_wholeimage_swapmulti.py --crop_size 224 --use_mask  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path ./demo_file/Iron_man.jpg --pic_b_path ./demo_file/multi_people.jpg --output_path ./output/ 
+
+
+# swap normal
+python test_wholeimage_swapmulti.py --crop_size 224 --use_mask  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path debug/target.jpg --pic_b_path debug/test.png --output_path ./output/s1 --no_simswaplogo
+
+# swap 512
+python test_wholeimage_swapmulti.py --crop_size 512 --use_mask  --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path debug/target.jpg --pic_b_path debug/test.png --output_path ./output/s1 --no_simswaplogo
+
+
 ```
 - Swap **specific** face within one image. The result would be saved to ./output/result_whole_swapspecific.jpg
 ```

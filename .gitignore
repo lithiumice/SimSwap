@@ -139,6 +139,13 @@ checkpoints/
 
 *.pth
 *.onnx
+
+
 wandb/
 temp_results/
 output/*.*
+
+
+tmp*/
+debug*
+output/
