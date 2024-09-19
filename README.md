@@ -62,7 +62,7 @@ If you find this project useful, please star it. It is the greatest appreciation
 [![logo](./docs/img/vggface2_hq_compare.png)](https://github.com/NNNNAI/VGGFace2-HQ)
 
 
-
+python -c "import torch; print(torch.cuda.is_available()); print(torch.randn(5,5).cuda())"
 
 ## Dependencies
 - python3.6+

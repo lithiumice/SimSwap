@@ -48,9 +48,9 @@ class Predictor(cog.Predictor):
             if id >= 0:
                 opt.gpu_ids.append(id)
 
-        # set gpu ids
-        if len(opt.gpu_ids) > 0:
-            torch.cuda.set_device(opt.gpu_ids[0])
+        # # set gpu ids
+        # if len(opt.gpu_ids) > 0:
+        #     torch.cuda.set_device(opt.gpu_ids[0])
 
         torch.nn.Module.dump_patches = True
         model = create_model(opt)
